@@ -1,9 +1,5 @@
 // Import stylesheets
 import './style.css';
-const firebase = require("firebase");
-// Required for side-effects
-require("firebase/firestore");
-
 // Body element
 const body = document.getElementById('body');
 
@@ -62,15 +58,6 @@ async function getUserProfile() {
   statusMessage.innerHTML = '<b>statusMessage:</b> ' + profile.statusMessage;
   displayName.innerHTML = '<b>displayName:</b> ' + profile.displayName;
   email.innerHTML = '<b>email:</b> ' + liff.getDecodedIDToken().email;
-}
-
-async function image() {
-  const image =
-    await axios.get(`https://firestore.googleapis.com/v1/projects/qrbarcode-6914f/databases/(default)/documents/Rawimg?key=AAAAnvTT75M:APA91bHDXZK6Qn8ewKorX3rjXdE1A9Ms8o19rGrYOiATgp78FsLONkYLL2S_0O__zFpuDzfCYRBWzC7v8B-3cM4B02-lavvR7U5lX3z4BF8De_LCx93WlRZHwlpCBN3VS5EQXgd6X-K4
-  `);
-  if (image) {
-    return image;
-  }
 }
 
 btnLogIn.onclick = () => {
